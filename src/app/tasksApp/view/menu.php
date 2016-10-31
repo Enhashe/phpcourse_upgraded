@@ -7,10 +7,10 @@
 			Loops
 			<ul>
 				<li>
-					<a href="/tasks/loops-1">1</a>
+					<a href="/tasks/loops/1">1</a>
 				</li>
 				<li>
-					<a href="/tasks/loops-2">2</a>
+					<a href="/tasks/loops/2">2</a>
 				</li>
 			</ul>
 		</li>
@@ -18,7 +18,7 @@
 			Arrays 1
 			<ul>
 				<li>
-					<a href="/tasks/arrays_1-1">1</a>
+					<a href="/tasks/arrays_1/1">1</a>
 				</li>
 			</ul>
 		</li>
@@ -26,7 +26,10 @@
 			MySQL
 			<ul>
 				<li>
-					<a href="/tasks/mysql-1">1</a>
+					<a href="/tasks/mysql/1">1</a>
+				</li>
+				<li>
+					<a href="/tasks/mysql/2">2</a>
 				</li>
 			</ul>
 		</li>

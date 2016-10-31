@@ -5,7 +5,12 @@
 </div>
 <div class="task-item">
 	Input:<br>
-	<?php echo $pageData['inputData']; ?>
+	<form name="inputDataForm" method="post">
+		<textarea name="inputDataText" rows="10" cols="70"></textarea><br>
+		<input type="submit" value="Submit Data">
+		<input type="reset" value="Reset Data">
+	</form>
+	<?php   print_r($pageData['inputData']); ?>
 </div>
 <div class="task-item">
 	Output:<br>

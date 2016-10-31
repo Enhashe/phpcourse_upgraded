@@ -23,7 +23,8 @@ function getTasksMap ()
 		'mysql' => [
 			'title' => 'MySQL',
 			'tasks' => [
-				1
+				1,
+				2
 			]
 		]
 	];
@@ -46,6 +47,23 @@ function getTaskTitle($section, $taskNumber)
 	return implode('->', $titleChunks);
 }
 
+/**
+ * Get tsak input data
+ * @return array
+ *
+ */
+
+function getTaskInputData()
+{
+	$inputData = (!empty($_POST['inputDataText'])) ? explode(PHP_EOL, $_POST['inputDataText']) : [] ;
+	foreach ($inputData as $key => $value) {
+		if (preg_match('/[,]/', $inputData[$key])) {
+			$inputData[$key] = explode(',', $inputData[$key]);
+		}
+	}
+	var_dump($inputData);
+	return $inputData;
+}
 
 /**
  * Get task data
@@ -60,13 +78,13 @@ function getTask($section, $taskNumber, $dbConnection)
 	$description = ''; // @todo get description from tasksMap
 	$categoryCode = $section;
 	$task = new Task($taskNumber, $categoryCode, $description);
-	$inputData = [];
+	$inputData = getTaskInputData();
 	$result = $task->run($inputData, $dbConnection);
-	
+
 	return [
 		'title' => $pageTitle,
 		'description' => $task->getDescription(),
-		'inputData' => '',
+		'inputData' => $inputData,
 		'result' => $result
 	];
 }
