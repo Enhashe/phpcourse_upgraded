@@ -56,12 +56,15 @@ function getTaskTitle($section, $taskNumber)
 function getTaskInputData()
 {
 	$inputData = (!empty($_POST['inputDataText'])) ? explode(PHP_EOL, $_POST['inputDataText']) : [] ;
+	$inputData2 = parse_str($inputData);
 	foreach ($inputData as $key => $value) {
 		if (preg_match('/[,]/', $inputData[$key])) {
-			$inputData[$key] = explode(',', $inputData[$key]);
+			//$inputData[$key] = explode(',', $inputData[$key]);
+			var_dump($inputData[$key]);
+			$inputData2 = parse_str("$inputData[$key]");
 		}
 	}
-	var_dump($inputData);
+	var_dump($inputData2);
 	return $inputData;
 }
 
