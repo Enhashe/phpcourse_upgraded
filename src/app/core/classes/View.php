@@ -15,7 +15,6 @@ class View
         $subPath = implode('/', $subPathElements) . '.php';
         $viewPath = rtrim($this->pathToViews, '/') . '/' . $subPath;
         $parameters['pathToView'] = $viewPath;
-        var_dump($parameters);
         extract($parameters);
         require $this->pathToViews . '/layout.php';
 	}
