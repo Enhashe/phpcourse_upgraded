@@ -4,6 +4,9 @@
 			<a href="/about">About</a>
 		</li>
 		<li>
+			<a href="/contacts">Contacts</a>
+		</li>
+		<li>
 			Loops
 			<ul>
 				<li>
